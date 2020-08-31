@@ -1,4 +1,4 @@
-package pl.programodawca.thymeleaf.Model;
+package pl.programodawca.thymeleaf.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,6 +19,6 @@ public class Author {
     private String lastName;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "project_user", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_author"))
+    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_author"))
     private List<Book> books = new ArrayList<>();
 }

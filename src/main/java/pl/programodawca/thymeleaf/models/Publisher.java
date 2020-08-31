@@ -1,4 +1,4 @@
-package pl.programodawca.thymeleaf.Model;
+package pl.programodawca.thymeleaf.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
