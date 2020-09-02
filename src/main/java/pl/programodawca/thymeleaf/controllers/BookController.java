@@ -7,7 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.programodawca.thymeleaf.models.Book;
-import pl.programodawca.thymeleaf.repositories.BookRepository;
 import pl.programodawca.thymeleaf.services.BookService;
 
 @Controller

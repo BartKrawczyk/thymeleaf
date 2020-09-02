@@ -1,0 +1,6 @@
+//up from medium
+@mixin medium-up {
+  @media(min-width: #{$bp-medium}){
+    @content
+  }
+}

@@ -1,29 +1,33 @@
-package pl.programodawca.thymeleaf.models;
+package pl.programodawca.thymeleaf.dtos;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import pl.programodawca.thymeleaf.models.Book;
+
 import java.util.List;
 
-@Entity
-@Table(name = "authors")
-public class Author {
+public class AuthorDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column
     private String firstName;
-
-    @Column
     private String lastName;
+    private List<Book> books;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_author"))
-    private List<Book> books = new ArrayList<>();
+    public AuthorDto() {
+
+    }
+
+    public AuthorDto(Long id, String firstName, String lastName, List<Book> books) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.books = books;
+    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
